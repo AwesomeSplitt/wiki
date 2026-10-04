@@ -26,13 +26,16 @@ If no filter is specified, the event will be triggered by any block broken.
 
 # Methods
 - `event.getBlock() - Returns `event.block`
+- `event.cancel(value = null)` - Cancels the event with the given exit value. Execution will be stopped **immediately**; *cancel* denotes a *false* outcome
 - `event.getEntity() - Returns `event.entity`
+- `event.exit(value = null)` - Stops the event with the given exit value. Execution will be stopped **immediately**; *exit* denotes a *default* outcome 
 - `event.addGameStage(stage)` - Adds the specified game stage to the player
 - `event.hasGameStage(stage)` - Checks if the player has the specified game stage; Returns boolean
 - `event.removeGameStage(stage)` - Removes the specified game stage from the player
 - `event.getLevel() - Returns `event.level`
 - `event.getPlayer() - Returns `event.player`
 - `event.getServer() - Returns `event.server`
+- `event.success(value = null)` - Stops the event with the given exit value. Execution will be stopped **immediately**; *success* denotes a *true* outcome
 - `event.getXp() - Returns `event.xp`
 - `event.setXp(xp) - Sets `event.xp` to the given value
 >>> warning
