@@ -1,0 +1,6 @@
+```js
+BlockEvents.broken(block, (event) => void)
+```
+```js
+BlockEvents.broken((event) => void)
+```
