@@ -1,6 +1,50 @@
+# Syntax
 ```js
-BlockEvents.broken(block, (event) => void)
+BlockEvents.broken(filter, (event) => void)
 ```
 ```js
 BlockEvents.broken((event) => void)
+```
+>>> info
+This event is cancelable.
+<<<
+
+# Info
+Event that triggers once a block that passes a specifed filter is broken. 
+If no filter is specified, the event will be triggered by any block broken.
+
+# Fields
+- `event.block` - The block that was broken
+- `event.entity` - The player that broke the block
+- `event.level` - The level in which the block was broken
+- `event.player` - Synonymous with `event.entity`
+- `event.server` - The server in which the block was broken
+- `event.xp` - The experience dropped by the block
+>>> warning
+`event.xp` only works on Forge.
+<<<
+
+# Methods
+- `event.getBlock() - Returns `event.block`
+- `event.getEntity() - Returns `event.entity`
+- `event.addGameStage(stage)` - Adds the specified game stage to the player
+- `event.hasGameStage(stage)` - Checks if the player has the specified game stage; Returns boolean
+- `event.removeGameStage(stage)` - Removes the specified game stage from the player
+- `event.getLevel() - Returns `event.level`
+- `event.getPlayer() - Returns `event.player`
+- `event.getServer() - Returns `event.server`
+- `event.getXp() - Returns `event.xp`
+- `event.setXp(xp) - Sets `event.xp` to the given value
+>>> warning
+- `getXp()` and `setXp()` only work on Forge.
+- `addGameStage()`, `hasGameStage()`, and `removeGameStage()` require the Game Stages mod.
+<<<
+
+# Example
+```js
+// Convert stone to cobblestone when mined
+BlockEvents.broken('minecraft:stone', (event) => {
+  event.block.set('minecraft:cobblestone')
+  event.cancel() // Cancel event to prevent block being set to air
+})
 ```
