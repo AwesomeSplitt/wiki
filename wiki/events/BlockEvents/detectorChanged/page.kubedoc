@@ -1,1 +1,21 @@
+# Info
+Event that triggers when a detector block registered in KubeJS receives a block update.
 
+# Fields
+- `event.block` - The detector block
+- `event.detectorId` - The id of the detector block when it was registered
+- `event.level` - The level where the detector block is located
+- `event.powered` - If the detector block is powered
+- `event.server` - The server where the detector block is located
+
+# Methods
+- `event.getBlock() - Returns `event.block`
+- `event.getDetectorId() - Returns `event.detectorId`
+- `event.getLevel() - Returns `event.level`
+- `event.isPowered()` - Returns `event.powered`
+- `event.getServer() - Returns `event.server`
+
+# Example
+```js
+// TODO
+```
